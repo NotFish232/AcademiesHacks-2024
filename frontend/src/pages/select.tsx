@@ -1,5 +1,5 @@
 function SelectPage() {
-
+    return <div>Select Page</div>
 }
 
-exp
+export default SelectPage;
