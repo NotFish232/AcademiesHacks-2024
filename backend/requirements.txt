@@ -1,1 +1,4 @@
 django==5.0.6
+
+# mypy stubs
+django-stubs==5.0.0
