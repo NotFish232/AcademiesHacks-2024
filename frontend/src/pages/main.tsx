@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
 
-
 function MainPage() {
     return (
         <div>
