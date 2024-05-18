@@ -1,16 +1,14 @@
-import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { Suspense, useRef, useState } from 'react';
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Suspense, useRef, useState } from "react";
 import { OrbitControls } from "@react-three/drei";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-
-
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 function ScenePage() {
     const gltf_ref = useRef();
     const gltf = useLoader(GLTFLoader, "/test.gltf");
 
     return (
-        <Canvas className='w-40 h-full'>
+        <Canvas className="h-full w-40">
             <ambientLight intensity={0.25} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
@@ -21,7 +19,6 @@ function ScenePage() {
                 position={[0, 0, 0]}
             />
             <OrbitControls />
-
         </Canvas>
     );
 }
