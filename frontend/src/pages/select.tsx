@@ -5,7 +5,9 @@ function useScenes() {
     const [scenes, setScenes] = useState<string[] | null>(null);
 
     useEffect(() => {
-        fetch(`${backend_url}/scene/list`).then(r => r.json()).then(setScenes);
+        fetch(`${backend_url}/scene/list`)
+            .then((r) => r.json())
+            .then(setScenes);
     }, []);
 
     return scenes;
@@ -17,13 +19,25 @@ interface SceneComponentProps {
 }
 
 function SceneComponent(props: SceneComponentProps) {
-    return <div onClick={() => props.onClick(props.scene)}>props.scene</div>;
+    return <div onClick={() => props.onClick(props.scene)}>{props.scene}</div>;
 }
 
 function SelectPage() {
     const scenes = useScenes();
     const [selectedScene, setSelectedScene] = useState<string | null>(null);
-    return <div>{scenes?.map(s => <SceneComponent scene={s} onClick={(s) => setSelectedScene(s)} />)} </div>;
+    return (
+        <>
+            <div>
+                {scenes?.map((s, idx) => (
+                    <SceneComponent
+                        scene={s}
+                        onClick={(s) => setSelectedScene(s)}
+                        key={idx}
+                    />
+                ))}{" "}
+            </div>
+        </>
+    );
 }
 
 export default SelectPage;

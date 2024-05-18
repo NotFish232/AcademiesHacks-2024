@@ -1,5 +1,5 @@
 function Footer() {
-    return <div className="bg-blue-400 h-[5vh]">footer</div>;
+    return <div className="h-[5vh] bg-blue-400">footer</div>;
 }
 
 export default Footer;
