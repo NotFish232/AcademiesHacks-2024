@@ -6,12 +6,10 @@ import SelectPage from "./pages/select";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
-
-
 function App() {
     return (
         <>
-        <Navbar/>
+            <Navbar />
             <BrowserRouter>
                 <Routes>
                     <Route path="/" Component={MainPage} />
@@ -21,8 +19,8 @@ function App() {
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </BrowserRouter>
+            <Footer />
         </>
-        <Footer/>
     );
 }
 
