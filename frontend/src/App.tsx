@@ -10,7 +10,7 @@ function App() {
     return (
         <>
             <Navbar />
-            <div className="h-[80vh]">
+            <div className="h-[85vh]">
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" Component={MainPage} />
