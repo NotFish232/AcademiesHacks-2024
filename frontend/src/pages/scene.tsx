@@ -5,10 +5,15 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import CaretLeft from "../assets/svgs/caret_left.svg?react";
 import CaretRight from "../assets/svgs/caret_right.svg?react";
 import { Slider } from "@/components/ui/slider";
+import { backend_url } from "@/shared";
+import { useSearchParams } from "react-router-dom";
 
 function ScenePage() {
+    const [searchParams, _setSearchParams] = useSearchParams();
+    const scene = searchParams.get("scene")!;
+
     const gltf_ref = useRef();
-    const gltf = useLoader(GLTFLoader, "/test.gltf");
+    const gltf = useLoader(GLTFLoader, `${backend_url}/scene/file?filename=${scene}`);
 
     const [isOpened, setIsOpened] = useState(false);
     const [brightness, setBrightness] = useState(0.3);

@@ -1,5 +1,6 @@
 import { backend_url } from "@/shared";
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
 function useScenes() {
     const [scenes, setScenes] = useState<string[] | null>(null);
@@ -15,28 +16,41 @@ function useScenes() {
 
 interface SceneComponentProps {
     scene: string;
+    selected: boolean;
     onClick: (scene: string) => void;
 }
 
 function SceneComponent(props: SceneComponentProps) {
-    return <div onClick={() => props.onClick(props.scene)}>{props.scene}</div>;
+    return <div onClick={() => props.onClick(props.scene)} className={"cursor-pointer" + (props.selected ? " font-semibold" : "")}>{props.scene}</div>;
 }
 
 function SelectPage() {
     const scenes = useScenes();
     const [selectedScene, setSelectedScene] = useState<string | null>(null);
+    const [visualizeClicked, setVisualizeClicked] = useState(false);
+
+    if (visualizeClicked) {
+        return <Navigate to={`/scene?scene=${selectedScene}`} />
+    }
+
     return (
-        <>
-            <div>
+        <div className="flex flex-col mx-4 my-6">
+            <div className="text-3xl font-semibold">Available Scenes</div>
+            <div className="mt-2">
                 {scenes?.map((s, idx) => (
                     <SceneComponent
                         scene={s}
+                        selected={s == selectedScene}
                         onClick={(s) => setSelectedScene(s)}
                         key={idx}
                     />
-                ))}{" "}
+                ))}
             </div>
-        </>
+            <div className="flex-1" />
+            <div className="cursor-pointer" onClick={() => { if (selectedScene) { setVisualizeClicked(true); } }}>
+                Visualize Scene
+            </div>
+        </div>
     );
 }
 
