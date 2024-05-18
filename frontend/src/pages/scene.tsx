@@ -8,18 +8,19 @@ function ScenePage() {
     const gltf = useLoader(GLTFLoader, "/test.gltf");
 
     return (
-        <Canvas className="h-full w-40">
-            <ambientLight intensity={0.25} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <pointLight position={[-10, -10, -10]} />
+            <Canvas className="border border-black">
+                <ambientLight intensity={0.25} />
+                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+                <pointLight position={[-10, -10, -10]} />
 
-            <primitive
-                ref={gltf_ref}
-                object={gltf.scene}
-                position={[0, 0, 0]}
-            />
-            <OrbitControls />
-        </Canvas>
+                <primitive
+                    ref={gltf_ref}
+                    object={gltf.scene}
+                    position={[0, 0, 0]}
+                />
+                <OrbitControls />
+            </Canvas>
+
     );
 }
 

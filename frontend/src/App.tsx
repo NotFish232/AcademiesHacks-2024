@@ -10,15 +10,17 @@ function App() {
     return (
         <>
             <Navbar />
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" Component={MainPage} />
-                    <Route path="/scene" Component={ScenePage} />
-                    <Route path="/upload" Component={UploadPage} />
-                    <Route path="/select" Component={SelectPage} />
-                    <Route path="*" element={<Navigate to="/" />} />
-                </Routes>
-            </BrowserRouter>
+            <div className="h-[80vh]">
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" Component={MainPage} />
+                        <Route path="/scene" Component={ScenePage} />
+                        <Route path="/upload" Component={UploadPage} />
+                        <Route path="/select" Component={SelectPage} />
+                        <Route path="*" element={<Navigate to="/" />} />
+                    </Routes>
+                </BrowserRouter>
+            </div>
             <Footer />
         </>
     );
