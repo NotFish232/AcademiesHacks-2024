@@ -4,11 +4,10 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import UploadPage from "./pages/upload";
 import SelectPage from "./pages/select";
 import Navbar from "./components/navbar";
-import Footer from "./components/footer";
 
 function App() {
     return (
-        <>
+        <div className="flex flex-row w-full h-full">
             <Navbar />
             <div className="h-[85vh]">
                 <BrowserRouter>
@@ -21,8 +20,7 @@ function App() {
                     </Routes>
                 </BrowserRouter>
             </div>
-            <Footer />
-        </>
+        </div>
     );
 }
 
