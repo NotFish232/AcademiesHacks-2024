@@ -9,7 +9,7 @@ function Navbar() {
 
     return (
         <div className="space flex h-[100vh] w-[20vw] flex-col items-center bg-slate-800">
-            <div className="mx-3 mt-32 rounded-full bg-slate-100">
+            <div className="mx-3 mt-32 rounded-full bg-slate-100 size-56 flex items-center justify-center">
                 <img src={Logo} />
             </div>
             <div className="mt-10 cursor-pointer font-semibold text-slate-100">
