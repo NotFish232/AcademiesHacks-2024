@@ -25,7 +25,7 @@ function SceneComponent(props: SceneComponentProps) {
         <div
             onClick={() => props.onClick(props.scene)}
             className={
-                "cursor-pointer" + (props.selected ? " font-semibold" : "")
+                "cursor-pointer" + (props.selected ? " font-semibold h-svh flex flex-col  bg-[#d5c891] p-10" : "h-svh bg-[#d5c891]")
             }>
             {props.scene}
         </div>

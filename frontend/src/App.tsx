@@ -10,7 +10,7 @@ function App() {
         <BrowserRouter>
             <div className="flex h-full w-full flex-row">
                 <Navbar />
-                <div className="h-[85vh] w-[80vw]">
+                <div className="h-[85vh] w-[80vw]  text-[#1E1E1E]">
                     <Routes>
                         <Route path="/" Component={MainPage} />
                         <Route path="/scene" Component={ScenePage} />

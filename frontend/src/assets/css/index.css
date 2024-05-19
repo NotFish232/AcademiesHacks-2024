@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Alergia';
+    src: local('AlergiaWide-Bold'),
+    url('./assets/fonts/AlergiaWide-Bold.otf') format('truetype') ;
+}
+ 
 @layer base {
     :root {
         --background: 0 0% 100%;
