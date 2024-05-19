@@ -21,7 +21,15 @@ interface SceneComponentProps {
 }
 
 function SceneComponent(props: SceneComponentProps) {
-    return <div onClick={() => props.onClick(props.scene)} className={"cursor-pointer" + (props.selected ? " font-semibold" : "")}>{props.scene}</div>;
+    return (
+        <div
+            onClick={() => props.onClick(props.scene)}
+            className={
+                "cursor-pointer" + (props.selected ? " font-semibold" : "")
+            }>
+            {props.scene}
+        </div>
+    );
 }
 
 function SelectPage() {
@@ -30,11 +38,11 @@ function SelectPage() {
     const [visualizeClicked, setVisualizeClicked] = useState(false);
 
     if (visualizeClicked) {
-        return <Navigate to={`/scene?scene=${selectedScene}`} />
+        return <Navigate to={`/scene?scene=${selectedScene}`} />;
     }
 
     return (
-        <div className="flex flex-col mx-4 my-6">
+        <div className="mx-4 my-6 flex flex-col">
             <div className="text-3xl font-semibold">Available Scenes</div>
             <div className="mt-2">
                 {scenes?.map((s, idx) => (
@@ -47,7 +55,13 @@ function SelectPage() {
                 ))}
             </div>
             <div className="flex-1" />
-            <div className="cursor-pointer" onClick={() => { if (selectedScene) { setVisualizeClicked(true); } }}>
+            <div
+                className="cursor-pointer"
+                onClick={() => {
+                    if (selectedScene) {
+                        setVisualizeClicked(true);
+                    }
+                }}>
                 Visualize Scene
             </div>
         </div>

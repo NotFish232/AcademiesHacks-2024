@@ -13,7 +13,10 @@ function ScenePage() {
     const scene = searchParams.get("scene")!;
 
     const gltf_ref = useRef();
-    const gltf = useLoader(GLTFLoader, `${backend_url}/scene/file?filename=${scene}`);
+    const gltf = useLoader(
+        GLTFLoader,
+        `${backend_url}/scene/file?filename=${scene}`,
+    );
 
     const [isOpened, setIsOpened] = useState(false);
     const [brightness, setBrightness] = useState(0.3);

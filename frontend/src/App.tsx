@@ -7,10 +7,10 @@ import Navbar from "./components/navbar";
 
 function App() {
     return (
-        <div className="flex flex-row w-full h-full">
-            <Navbar />
-            <div className="h-[85vh]">
-                <BrowserRouter>
+        <BrowserRouter>
+            <div className="flex h-full w-full flex-row">
+                <Navbar />
+                <div className="h-[85vh] w-[80vw]">
                     <Routes>
                         <Route path="/" Component={MainPage} />
                         <Route path="/scene" Component={ScenePage} />
@@ -18,9 +18,9 @@ function App() {
                         <Route path="/select" Component={SelectPage} />
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
-                </BrowserRouter>
+                </div>
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
 
