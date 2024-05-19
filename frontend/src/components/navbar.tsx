@@ -21,6 +21,9 @@ function Navbar() {
             <div className="mt-2 cursor-pointer font-semibold text-slate-100">
                 <Link to={{ pathname: "/upload" }}>Upload Scene</Link>
             </div>
+            <div className="mt-2 cursor-pointer font-bold text-3xl text-slate-100 bg-slate-700 rounded-lg px-3 py-2">
+                AI Detective
+            </div>
             <div className="flex-1" />
             <div className="text-slate-100 ">Share Scene</div>
             {scene ? (
