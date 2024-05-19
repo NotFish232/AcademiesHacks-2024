@@ -26,6 +26,6 @@ def list_view(request: HttpRequest) -> JsonResponse:
 def file_view(request: HttpRequest) -> HttpResponse:
     filename = request.GET.get("filename")
 
-    scene = Scene.objects.get(filename=filename)
+    scene = Scene.objects.filter(filename=filename).first()
 
     return HttpResponse(scene.content, content_type="application/octet-stream")
